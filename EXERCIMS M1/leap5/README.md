@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# React Año Bisiesto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Importamos React y el archivo CSS.
+Definimos la función isLeap en la parte superior del archivo app.tsx.
+Creamos un componente funcional App que usa isLeap para determinar si un año específico es bisiesto o no.
+El año se establece como 2024 por defecto, pero puedes cambiarlo según lo necesites.
+El resultado se muestra en el navegador.
 
-Currently, two official plugins are available:
+Importamos la biblioteca React, que nos permite crear componentes de React y manejar el DOM de manera eficiente.
+También importamos el archivo app.css, que contiene estilos CSS para nuestro componente App.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta es una función que toma un año (year) como argumento y devuelve un valor booleano (true si el año es bisiesto, false si no lo es).
+Utiliza la lógica que proporcionaste anteriormente para determinar si un año es bisiesto o no.
 
-## Expanding the ESLint configuration
+Este es un componente funcional de React llamado App.
+Dentro de este componente:
+Definimos una variable year que contiene el año que queremos verificar si es bisiesto o no. Puedes cambiar este valor según necesites.
+Luego, llamamos a la función isLeap con el año proporcionado y almacenamos el resultado en la variable isYearLeap.
+Renderizamos JSX dentro de un div. Mostramos un encabezado <h1> y un párrafo <p> que indican si el año es bisiesto o no, dependiendo del valor de isYearLeap.
+Utilizamos una expresión ternaria (isYearLeap ? 'bisiesto' : 'no bisiesto') para mostrar el mensaje adecuado según el resultado de la función isLeap.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+##EJEMPLO
+const App: React.FC = () => {
+  const year = 2024; // Puedes cambiar el año aquí para probar
+  const isYearLeap = isLeap(year);
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+  return (
+    <div className="App">
+      <h1>Verificación de Año Bisiesto</h1>
+      <p>El año {year} es {isYearLeap ? 'bisiesto' : 'no bisiesto'}.</p>
+    </div>
+  );
 }
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
