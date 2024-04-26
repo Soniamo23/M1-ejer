@@ -16,7 +16,8 @@ Este es un componente funcional de React llamado App.
 Dentro de este componente:
 Definimos una variable year que contiene el año que queremos verificar si es bisiesto o no. Puedes cambiar este valor según necesites.
 Luego, llamamos a la función isLeap con el año proporcionado y almacenamos el resultado en la variable isYearLeap.
-Renderizamos JSX dentro de un div. Mostramos un encabezado <h1> y un párrafo <p> que indican si el año es bisiesto o no, dependiendo del valor de isYearLeap.
+Renderizamos JSX dentro de un div. 
+Mostramos un encabezado H1 y un párrafo P que indican si el año es bisiesto o no, dependiendo del valor de isYearLeap.
 Utilizamos una expresión ternaria (isYearLeap ? 'bisiesto' : 'no bisiesto') para mostrar el mensaje adecuado según el resultado de la función isLeap.
 
 ##EJEMPLO
