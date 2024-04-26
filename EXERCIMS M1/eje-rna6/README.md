@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# React + TypeScript RNA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Importación de React y CSS:
+Importamos React desde la biblioteca de React para poder definir componentes de React.
+Importamos el archivo CSS necesario. Esto es opcional y depende de si deseas aplicar estilos al componente App.
+Definición de la interfaz M:
+Se define una interfaz llamada M, que especifica que cualquier propiedad de tipo cadena debe tener un valor de tipo cadena. Esta interfaz se utiliza para definir el tipo del objeto Map, que mapea las bases de ADN a las bases de ARN.
+## Objeto Map:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+toRna es una función que realiza la transcripción de ADN a ARN.
+Toma una cadena de ADN como entrada y devuelve una cadena de ARN como salida.
+Primero, verifica si la cadena de ADN contiene caracteres que no son 'A', 'C', 'G' o 'T'. Esto se hace utilizando una expresión regular (/[^ACGT]/) y el método test. Si encuentra algún carácter no válido, lanza un error.
+Luego, utiliza el método replace en la cadena de ADN para reemplazar cada base de ADN con su correspondiente base de ARN utilizando el objeto Map definido anteriormente.
+## Componente App:
+App es un componente de React que devuelve la interfaz de usuario.
+Dentro de este componente, se llama a la función toRna con una cadena de ADN de ejemplo ("GCTA") y se muestra la cadena de ADN original y la cadena de ARN resultante en la interfaz de usuario.
+Se utiliza JSX para definir la estructura del componente. JSX es una extensión de sintaxis de JavaScript que permite escribir código similar a HTML dentro de componentes de React.
+##Exportación de App:
+El componente App se exporta para que pueda ser importado y utilizado en otros archivos de tu aplicación.
